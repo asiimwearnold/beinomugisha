@@ -6,13 +6,13 @@ RewriteEngine on
 # meaning that if the folder exists on 
 #the server then dont change anything and dont run the rule
 
-RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
 
 #Check for file in directory with .html extension
 
-RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteCond %{REQUEST_FILENAME}/.html -f
 
 # Here we actually show the page that has the .html exyension
 
-RewriteRule ^(.*)$ $1.html [NC,L]
+RewriteRule ^(^[\.]+)$ $1.html [NC,L]
 
